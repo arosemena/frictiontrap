@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FrictionTrap</title>
+  <link rel="stylesheet" href="styles/common.css" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup">
+    <header class="popup-header">
+      <div class="brand">
+        <img src="icons/icon48.png" alt="" width="22" height="22" />
+        <h1>FrictionTrap</h1>
+      </div>
+      <label class="switch" title="Enable or pause FrictionTrap">
+        <input type="checkbox" id="enabled-toggle" />
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <section id="tab-status-card" class="tab-card hidden">
+      <div class="tab-card-info">
+        <span id="tab-domain" class="tab-domain"></span>
+        <span id="tab-state" class="tab-state"></span>
+      </div>
+      <button id="tab-action-btn" class="btn-small" type="button"></button>
+    </section>
+
+    <section class="sites-section">
+      <div class="section-label">
+        <span>Gated sites</span>
+        <span id="site-count" class="count-pill">0</span>
+      </div>
+
+      <form id="add-site-form" class="add-form">
+        <input
+          id="site-input"
+          class="text-input"
+          type="text"
+          placeholder="Add domain (e.g. reddit.com)"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button type="submit" class="btn-add">Add</button>
+      </form>
+      <p id="form-error" class="form-error hidden"></p>
+
+      <ul id="site-list" class="site-list"></ul>
+      <p id="empty-state" class="empty-state hidden">No sites gated yet.</p>
+    </section>
+
+    <footer class="popup-footer">
+      <div class="stats-mini">
+        <span>Resisted: <strong id="stat-resisted">0</strong></span>
+        <span class="dot-sep">·</span>
+        <span>Entered: <strong id="stat-entered">0</strong></span>
+      </div>
+      <button id="open-options-btn" class="btn-link" type="button">Settings</button>
+    </footer>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

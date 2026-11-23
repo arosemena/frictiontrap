@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FrictionTrap Settings</title>
+  <link rel="stylesheet" href="styles/common.css" />
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="options-page">
+    <header class="page-header">
+      <div class="brand-row">
+        <img src="icons/icon48.png" alt="" width="32" height="32" />
+        <div>
+          <h1>FrictionTrap Settings</h1>
+          <p class="subtitle">Tune how much friction stands between you and distracting sites.</p>
+        </div>
+      </div>
+      <span id="save-toast" class="save-toast" aria-live="polite">Saved</span>
+    </header>
+
+    <main class="sections">
+      <section class="card">
+        <h2>Math Challenge</h2>
+
+        <div class="field-row">
+          <div class="field-meta">
+            <label for="problem-count">Problems required</label>
+            <p class="hint">How many arithmetic problems you must solve to unlock a tab.</p>
+          </div>
+          <div class="range-control">
+            <input id="problem-count" type="range" min="1" max="10" step="1" />
+            <span id="problem-count-val" class="range-value">4</span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field-meta">
+            <label for="difficulty">Difficulty</label>
+            <p class="hint">Higher difficulty adds larger numbers and multi-step expressions.</p>
+          </div>
+          <select id="difficulty" class="select-input">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div class="preview-box">
+          <span class="preview-label">Sample problem:</span>
+          <code id="sample-problem" class="preview-code">—</code>
+          <button id="refresh-sample-btn" class="btn-ghost" type="button">New sample</button>
+        </div>
+
+        <div class="field-row">
+          <div class="field-meta">
+            <label for="reset-on-wrong">Reset streak on wrong answer</label>
+            <p class="hint">A mistake sends you back to Problem 1 with fresh equations.</p>
+          </div>
+          <input id="reset-on-wrong" type="checkbox" class="checkbox-input" />
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Unlock Behavior</h2>
+
+        <div class="field-row">
+          <div class="field-meta">
+            <label for="unlock-duration">Per-tab time limit</label>
+            <p class="hint">After this duration, the tab re-locks and shows the friction gate again.</p>
+          </div>
+          <select id="unlock-duration" class="select-input">
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="15">15 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">60 minutes</option>
+            <option value="0">Until tab closes (no timer)</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header-row">
+          <div>
+            <h2>Gated Sites</h2>
+            <p class="hint">Subdomains are matched automatically (e.g. <code>x.com</code> also gates <code>mobile.x.com</code>).</p>
+          </div>
+          <button id="reset-sites-btn" class="btn-ghost" type="button">Reset defaults</button>
+        </div>
+
+        <form id="add-site-form" class="add-site-form">
+          <input
+            id="site-input"
+            class="text-input"
+            type="text"
+            placeholder="Enter a domain or URL (e.g. youtube.com)"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button type="submit" class="btn-primary">Add site</button>
+        </form>
+        <p id="site-error" class="error-text hidden"></p>
+
+        <ul id="site-list" class="site-chips"></ul>
+      </section>
+
+      <section class="card">
+        <div class="card-header-row">
+          <h2>Stats</h2>
+          <button id="reset-stats-btn" class="btn-ghost danger" type="button">Reset stats</button>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-num" id="stat-resisted">0</span>
+            <span class="stat-label">Turned back</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="stat-entered">0</span>
+            <span class="stat-label">Entered</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="stat-rate">—</span>
+            <span class="stat-label">Resistance rate</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

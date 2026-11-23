@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FrictionTrap — Pause before entering</title>
+  <link rel="stylesheet" href="styles/common.css" />
+  <link rel="stylesheet" href="gate.css" />
+</head>
+<body>
+  <main class="gate-shell">
+    <div class="gate-header">
+      <div class="domain-pill">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="domain-label">x.com</span>
+      </div>
+      <h1 id="gate-title">Pause before opening this tab</h1>
+      <p id="gate-subtitle" class="subtitle">
+        Do you actually need to be here right now, or is it muscle memory?
+      </p>
+      <div class="escape-row">
+        <button id="bail-btn" class="btn-escape" type="button">
+          Get back to work
+          <kbd>Esc</kbd>
+        </button>
+      </div>
+    </div>
+
+    <section class="challenge-card" id="challenge-card" aria-label="Friction challenge">
+      <div class="challenge-top">
+        <span id="progress-label" class="progress-label">Problem 1 of 4</span>
+        <span id="difficulty-badge" class="difficulty-badge">Medium</span>
+      </div>
+
+      <div class="progress-track" aria-hidden="true">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+
+      <div class="equation-box">
+        <div id="equation-text" class="equation-text">—</div>
+      </div>
+
+      <form id="answer-form" class="answer-form" autocomplete="off">
+        <label for="answer-input" class="sr-only">Your answer</label>
+        <input
+          id="answer-input"
+          class="answer-input"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Type answer…"
+          autofocus
+        />
+        <button type="submit" class="btn-submit">Check</button>
+      </form>
+
+      <p id="feedback-text" class="feedback-text" role="status" aria-live="polite"></p>
+
+      <div class="challenge-footer">
+        <span id="grant-info">Unlocks this tab for 10 minutes</span>
+        <span id="reset-note" class="muted">Wrong answer resets streak</span>
+      </div>
+    </section>
+
+    <footer class="gate-footer">
+      <span id="stats-summary">Turned back 0 times · Entered 0 times</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="options.html" target="_blank" rel="noopener">Settings</a>
+    </footer>
+  </main>
+
+  <script type="module" src="gate.js"></script>
+</body>
+</html>
