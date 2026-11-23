@@ -6,6 +6,10 @@
 ![Zero Dependencies](https://img.shields.io/badge/dependencies-zero-10b981?style=flat-square)
 ![License: MIT](https://img.shields.io/badge/license-MIT-64748b?style=flat-square)
 
+<p align="center">
+  <img src="screenshots/gate.png" alt="FrictionTrap full-screen gate" width="760" />
+</p>
+
 ---
 
 ## Why FrictionTrap?
@@ -22,6 +26,12 @@ Most of the time, that 15-second speed bump is all it takes to realize you opene
 - **Tunable math friction** — Addition and subtraction only (designed to deter, not feel like a math exam), with configurable problem count (`1–10`), difficulty (`Easy`, `Medium`, `Hard`), and optional streak reset on wrong answers.
 - **Per-tab unlock with optional timer** — Passing the challenge unlocks only that tab, and automatically re-locks it when your session timer expires (default `10 min`, or `Until tab closes`).
 - **Privacy-first & zero build step** — Plain HTML, CSS, and ES modules. Runs 100% locally with no telemetry, no external requests, and no `<all_urls>` host permissions.
+
+## Screenshots
+
+| Toolbar Popup | Settings Page |
+| :---: | :---: |
+| <img src="screenshots/popup.png" alt="FrictionTrap toolbar popup" width="280" /> | <img src="screenshots/options.png" alt="FrictionTrap settings page" width="460" /> |
 
 ## Installation (Unpacked in Chrome)
 
